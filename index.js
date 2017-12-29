@@ -11,19 +11,21 @@ module.exports = async function (middleware, dest = 'dest', opts = {}) {
 
   const files = await promisify(vfileRead.all)(f => {
     return !excludes.some(e => f.path.includes(e))
-  }, source)
+  }, source).catch(t(e))
   files.shift()
   files.map(f => vfile.readSync(f))
 
   const chain = trough()
   middleware.forEach(m => chain.use(m))
-  await promisify(chain.run)(files)
+  await promisify(chain.run)(files).catch(t(e))
 
   files.forEach(async f => {
     const relativePath = path.relative(source, f.path)
     const destPath = path.join(dest, relativePath)
     f.path = destPath
-    await promisify(mkdirp)(f.dirname)
-    await promisify(vfile.write)(f)
-  })
+    await promisify(mkdirp)(f.dirname).catch(t(e))
+    await promisify(vfile.write)(f).catch(t(e))
+  }).catch(t(e))
 }
+
+function t (e) { throw new Error(e) }
