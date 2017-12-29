@@ -16,7 +16,8 @@
     "url": "https://github.com/pup/o7/issues"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "README.md"
   ],
   "homepage": "https://github.com/pup/o7#readme",
   "dependencies": {
