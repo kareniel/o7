@@ -1,6 +1,6 @@
 {
   "name": "o7",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tiny file processor",
   "main": "index.js",
   "scripts": {
