@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/pup/o7/issues"
   },
-  "homepage": "https://github.com/pup/o7#readme"
+  "homepage": "https://github.com/pup/o7#readme",
+  "dependencies": {
+    "mkdirp": "0.5.1",
+    "to-vfile": "2.1.2",
+    "trough": "1.0.1",
+    "vfile-find-down": "2.0.2"
+  }
 }
