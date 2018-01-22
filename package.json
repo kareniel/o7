@@ -1,6 +1,6 @@
 {
   "name": "o7",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "tiny file processor",
   "main": "index.js",
   "repository": {
